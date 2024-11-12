@@ -15,28 +15,71 @@
         android:textColor="@android:color/white"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/article_subheading"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/article_heading"
-        android:padding="@dimen/padding_regular"
-        android:text="@string/article_subtitle"
-        android:textAppearance="@android:style/TextAppearance" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/article_heading">
 
-    <ScrollView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/article_subheading">
-
-        <TextView
-            android:id="@+id/article"
+        <LinearLayout
+            android:id="@+id/article_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/article_subheading"
-            android:lineSpacingExtra="@dimen/line_spacing"
-            android:text="@string/article_text"
-            android:autoLink="web" />
+            android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/article_subheading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_regular"
+                android:text="@string/article_subtitle"
+                android:textAppearance="@android:style/TextAppearance" />
+
+            <TextView
+                android:id="@+id/article"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:lineSpacingExtra="@dimen/line_spacing"
+                android:text="@string/article_text" />
+
+            <EditText
+                android:id="@+id/comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="comenta"
+                android:padding="8dp"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/article_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="@dimen/line_spacing"
+                android:padding="8dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/button_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Comment" />
+
+                <Button
+                    android:id="@+id/button_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit"
+                    android:layout_marginStart="16dp" />
+            </LinearLayout>
+        </LinearLayout>
     </ScrollView>
 
 </RelativeLayout>
